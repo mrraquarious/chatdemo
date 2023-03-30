@@ -37,7 +37,7 @@ app.post('/', async (req, res) => {
     });
 
     res.status(200).send({
-      bot: response.data.choices[0].text
+      bot: response.data.choices[0].message.content
     });
 
   } catch (error) {
