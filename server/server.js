@@ -37,9 +37,9 @@ app.post('/', async (req, res) => {
     });
     console.log()
     res.status(200).send({
-      bot: response.data.choices[0].text
+      bot: response.data.choices[0].message.content
     });
-    current_messages.push({role: "assistant", content: response.data.choices[0].text})
+    current_messages.push({role: "assistant", content: response.data.choices[0].message.content})
   } catch (error) {
     console.error(error)
     res.status(500).send(error || 'Something went wrong');
